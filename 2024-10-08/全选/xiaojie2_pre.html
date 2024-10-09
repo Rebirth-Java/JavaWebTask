@@ -1,0 +1,79 @@
+<HTML>
+
+<HEAD>
+  <META http-equiv="Content-Type" content="text/html; charset=gb2312">
+  <TITLE>getElementByName</TITLE>
+  <SCRIPT language="javascript">
+    function checkAll(boolValue) {
+      var checkboxes = document.getElementsByName('isBuy');
+      for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = boolValue;
+      }
+    }
+    function change() {
+      var allCheckbox = document.getElementsByName('mmAll')[0];
+      var checkboxes = document.getElementsByName('isBuy');
+      if (!allCheckbox.checked) {
+        for (var i = 0; i < checkboxes.length; i++) {
+          checkboxes[i].checked = false;
+        }
+      } else {
+        checkAll(true);
+      }
+    }
+  </SCRIPT>
+
+</HEAD>
+
+<BODY>
+  <FORM action="" name="buyForm" method="post">
+    <TABLE width="100%" border="0">
+      <TR>
+        <TD colspan="3"><IMG src="images/head.jpg" width="958" height="175"></TD>
+      </TR>
+      <TR>
+        <TD width="6%" align="right"><INPUT name=mmAll type="checkbox" onclick="change()"></TD>
+        <TD width="6%" align="left">ȫѡ</TD>
+        <TD width="88%"><IMG src="images/top.jpg" width="845" height="18"></TD>
+      </TR>
+      <TR>
+        <TD colspan="2" align="center"><INPUT name="isBuy" type="checkbox" id="isBuy" value="sanguo"></TD>
+        <TD><IMG src="images/one.jpg" width="843" height="80"></TD>
+      </TR>
+      <TR>
+        <TD colspan="3" align="center">
+          <HR noshade="noshade" style="border:1px  #CCCCCC dashed " />
+        </TD>
+      </TR>
+      <TR>
+        <TD colspan="2" align="center"><INPUT name="isBuy" type="checkbox" id="isBuy" value="paozhu"></TD>
+        <TD><IMG src="images/two.jpg" width="842" height="79"></TD>
+      </TR>
+      <TR>
+        <TD colspan="3" align="center">
+          <HR noshade="noshade" style="border:1px  #CCCCCC dashed " />
+        </TD>
+      </TR>
+      <TR>
+        <TD colspan="2" align="center"><INPUT name="isBuy" type="checkbox" id="isBuy" value="paozhu"></TD>
+        <TD><IMG src="images/three.jpg" width="844" height="81"></TD>
+      </TR>
+      <TR>
+        <TD colspan="3" align="center">
+          <HR noshade="noshade" style="border:1px  #CCCCCC dashed " />
+        </TD>
+      </TR>
+      <TR>
+        <TD colspan="2" align="center"><INPUT name="isBuy" type="checkbox" id="isBuy" value="jingwu"></TD>
+        <TD><IMG src="images/four.jpg" width="847" height="85"></TD>
+      </TR>
+      <TR>
+        <TD colspan="3" align="center">
+          <HR noshade="noshade" style="border:1px  #CCCCCC dashed " />
+        </TD>
+      </TR>
+    </TABLE>
+  </FORM>
+</BODY>
+
+</HTML>

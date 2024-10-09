@@ -2,8 +2,8 @@
 <HTML> 
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>完善”密码和”电子邮件的错误提示功能 </title>
 <STYLE type="text/css">
-<!--
 .borderBox {
 	
 	font-size: 15px;
@@ -11,8 +11,9 @@
 
 }
  
--->
+
 </STYLE>
+
 <script language="javascript" type="text/javascript">
    
   function checkLogin( )
@@ -28,24 +29,10 @@
   }
   
 
-}
-window.onload = function () {
+} function  checkText() {
             // 获取所有文本类型的输入框
-            var textInputs = document.querySelectorAll('input[type="text"], input[type="password"]');
-    
-    for (var i = 0; i < textInputs.length; i++) {
-        textInputs[i].onblur = function () {
-            switch(this.name) {
-                case "loginName":
-                    checkLogin();
-                    break;
-               
-                default:
-                alert("已经失去焦点")
-                    break;
-            }
-        };
-        };
+            var textInputs = document.getElementsByClassName("borderBox");
+            alert("已经失去焦点")
       }
 </script>
  
@@ -70,7 +57,7 @@ window.onload = function () {
     <TD width="225"  align="right" bgcolor="#E7FBFF">登录名：</TD>
   
     <TD width="445" align="left" bordercolor="#E7E3E7"> <INPUT name="loginName" type="text" class="borderBox"  id="loginName" 
-size="24"  onblur="checkLogin( )">
+size="24"  onblur="checkLogin()">
       <div id="loginError" style="display:inline"> </div></TD>
     <TD width="272" align="left" bordercolor="#E7E3E7">（可包含 a-z、0-9 和下划线）</TD>
   </TR>
@@ -78,20 +65,20 @@ size="24"  onblur="checkLogin( )">
     <TD width="225" align="right" bgcolor="#E7FBFF" >密码：</TD>
     <TD align="left" bordercolor="#E7E3E7"> <INPUT name="pass" type="password" class="borderBox"  
 
-id="pass" size="25" >  <div style="display: inline;">密码</div></TD>
+id="pass" size="25" onblur="checkText( )" >  <div style>密码</div></TD>
     <TD align="left" bordercolor="#E7E3E7">（至少包含 6 个字符） </TD>
   </TR>
   <TR class="register_table_line">
     <TD width="225" height="0" align="right" bgcolor="#E7FBFF">再次输入密码：</TD>
     <TD height="0" colspan="2" align="left" bordercolor="#E7E3E7"><INPUT name="rpass" type="password" 
 
-class="borderBox"  id="rpass" size="25" ></TD>
+class="borderBox"  id="rpass" size="25"  onblur="checkText( )"></TD>
   </TR>
   <TR class="register_table_line">
     <TD width="225" height="0" align="right" bgcolor="#E7FBFF">电子邮箱：</TD>
     <TD height="0" align="left" bordercolor="#E7E3E7"><INPUT name="email" type="text" class="borderBox"  
 
-id="email" size="24" ><div style="display: inline;">电子邮箱</div></TD></TD>
+id="email" size="24"  onblur="checkText( )"><div style="display: inline;">电子邮箱</div></TD></TD>
     <TD height="0" align="left" bordercolor="#E7E3E7"> （必须包含 @  字符）</TD>
   </TR>
   <TR class="register_table_line">

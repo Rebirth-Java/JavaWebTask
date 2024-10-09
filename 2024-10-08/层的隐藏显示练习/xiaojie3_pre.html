@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>层的隐藏显示练习 </TITLE>
+<STYLE type="text/css">
+
+/*设置图片按钮样式*/
+.picButton {    background-image: url(images/buttonBack.gif);
+    border:0 px;
+	margin: 0px;
+	padding: 0px;
+	height: 22px;
+	width: 123px;
+	font-size: 12px;	  
+}
+
+/*设置无下划线的超连接样式*/
+A {
+	color: blue;
+	text-decoration: none;
+   }       
+  A:hover{ /*鼠标在超链接上悬停时变为颜色*/
+   color: red;
+   }
+#placeLayer {
+	position:absolute;
+	left:200px;
+	top:81px;
+	width:483px;
+	height:194px;
+
+	z-index:2;
+	background-color: #FFFFFF;
+	background-image: url(images/layerBack.jpg);
+	display:none   /*   注意：在制作时，先插入层，然后人工修改层样式display: none 即可，教学时注销该行即显示层 。*/
+}
+
+</STYLE>
+<SCRIPT language="javascript" >
+function showMe( )
+{
+    
+  document.getElementById('placeLayer').style.display = 'block';//显示
+
+	 	 
+}
+function selectPlace(place)
+{
+  document.myform.placeButton.value=place;//将选择的城市赋值给这个按钮的value
+  alert("选择了 " + place);
+  
+  closeMe();
+}
+function closeMe( )
+{
+  
+  document.getElementById('placeLayer').style.display = 'none';//隐藏
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<FORM name="myform" method="post" action="">
+<TABLE width="58%" height="296" border="0"  align="center" background="images/51table_back.gif" style="background-repeat:no-repeat" >
+  <TR>
+    <TD height="36" align="right">&nbsp;</TD>
+  </TR>
+  
+  <TR>
+    <TD height="32" style="font-size:12px">&nbsp;地点：
+    <INPUT name="placeButton" type="button" class="picButton" value="    选择/修改    " onClick=" showMe( )"></TD>
+  </TR>
+  <TR>
+    <TD height="209"><P><IMG src="images/next.jpg" width="180" height="186"></P>
+      <P>&nbsp;</P></TD>
+  </TR>
+</TABLE>
+</FORM>
+<DIV id="placeLayer" style="background-repeat:no-repeat">
+  <TABLE width="476" height="109" border="0" cellspacing="0" style="font-size:12px">
+    <TR align="center">
+      <TD>&nbsp;</TD>
+      <TD>&nbsp;</TD>
+      <TD>&nbsp;</TD>
+      <TD><A href="javascript: closeMe( )">关闭</A></TD>
+    </TR>
+    <TR align="center">
+      <TD><A href="javascript: selectPlace('北京')" >北京</A></TD>
+      <TD><A href="javascript: selectPlace('上海')" >上海</A></TD>
+      <TD><A href="javascript: selectPlace('广州')">广州</A></TD>
+      <TD><A href="javascript: selectPlace('武汉')">武汉</A></TD>
+    </TR>
+    <TR align="center">
+      <TD><A href="javascript: selectPlace('成都')">成都</A></TD>
+      <TD><A href="javascript: selectPlace('徐州')">徐州</A></TD>
+      <TD><A href="javascript: selectPlace('深圳')">深圳</A></TD>
+      <TD><A href="javascript: selectPlace('珠海')">珠海</A></TD>
+    </TR>
+</TABLE>
+</DIV>
+</BODY>
+</HTML>

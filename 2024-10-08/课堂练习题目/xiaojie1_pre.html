@@ -1,0 +1,88 @@
+<HTML>
+  <HEAD>
+  <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <TITLE>计算器</TITLE>
+  <STYLE type="text/css">
+  /*细边框的文本输入框*/
+  .textBaroder
+  {
+    border-width:1px;
+    border-style:solid
+  }
+   
+  </STYLE>
+ <script type="text/javascript">
+  // 定义一个名为addNumbers的函数，用于实现两个数相加的功能
+  function addNumbers() {
+      // 获取ID为txtNum1的输入框的内容，并将其转换成浮点数
+      var num1 = parseFloat(document.getElementById('txtNum1').value);
+      // 获取ID为txtNum2的输入框的内容，并将其转换成浮点数
+      var num2 = parseFloat(document.getElementById('txtNum2').value);
+      // 将num1和num2相加的结果保留两位小数后，赋值给结果显示框（ID为txtResult）
+      document.getElementById('txtResult').value = (num1 + num2).toFixed(2);
+  }
+  
+  // 定义subtractNumbers函数来实现减法运算
+  function subtractNumbers() {
+      // 与addNumbers类似地获取两个数值变量
+      var num1 = parseFloat(document.getElementById('txtNum1').value);
+      var num2 = parseFloat(document.getElementById('txtNum2').value);
+      // 计算差值并显示结果
+      document.getElementById('txtResult').value = (num1 - num2).toFixed(2);
+  }
+  
+  // multiplyNumbers函数负责乘法计算
+  function multiplyNumbers() {
+      // 同样地读取输入值
+      var num1 = parseFloat(document.getElementById('txtNum1').value);
+      var num2 = parseFloat(document.getElementById('txtNum2').value);
+      // 显示两数相乘后的结果
+      document.getElementById('txtResult').value = (num1 * num2).toFixed(2);
+  }
+  
+  // 最后定义divideNumbers函数处理除法逻辑
+  function divideNumbers() {
+      // 获取被除数和除数
+      var num1 = parseFloat(document.getElementById('txtNum1').value);
+      var num2 = parseFloat(document.getElementById('txtNum2').value);
+      // 检查除数是否为零，以避免发生除以零的错误
+      if (num2 !== 0) {
+          // 如果除数不为零，则执行正常的除法操作
+          document.getElementById('txtResult').value = (num1 / num2).toFixed(2);
+      } else {
+          // 若除数为零，则向用户发出警告信息
+          alert("除数不能为零！");
+      }
+  }
+  </script>
+  </HEAD>
+  <BODY>
+  <IMG src="images/logo.gif" width="240" height="31" >欢迎您来淘宝！
+   <FORM action="" method="post" name="myform" id="myform">
+  <TABLE border="0" bgcolor="#C9E495" align="center">
+    <TR>
+      <TD colspan="4"><H3><IMG src="images/shop.gif" width="54" height="54">      购物简易计算器</H3></TD>
+    </TR>
+    <TR  >
+      <TD  >第一个数</TD>
+      <TD colspan="3"><INPUT name="txtNum1" type="text" class="textBaroder" id="txtNum1" size="25"></TD>
+    </TR>
+    <TR  >
+      <TD>第二个数</TD>
+      <TD colspan="3"><INPUT name="txtNum2" type="text" class="textBaroder" id="txtNum2" size="25"></TD>
+    </TR>
+    <TR>
+      <TD><INPUT name="addButton2" type="button" id="addButton2" value="  ＋  " onclick="addNumbers();"></TD>
+        <TD><INPUT name="subButton2" type="button" id="subButton2" value="  －  " onclick="subtractNumbers();"></TD>
+        <TD><INPUT name="mulButton2" type="button" id="mulButton2" value="  ×  " onclick="multiplyNumbers();"></TD>
+        <TD><INPUT name="divButton2" type="button" id="divButton2" value="  ÷  " onclick="divideNumbers();"></TD>
+    </TR>
+    <TR>
+      <TD>计算结果</TD>
+      <TD colspan="3"><INPUT name="txtResult" type="text" class="textBaroder" id="txtResult" size="25"></TD>
+    </TR>
+  </TABLE>
+  </FORM>
+  </BODY>
+  </HTML>
+  

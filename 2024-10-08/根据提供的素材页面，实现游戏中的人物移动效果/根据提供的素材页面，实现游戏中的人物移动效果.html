@@ -1,0 +1,55 @@
+<HTML>
+
+<HEAD>
+	<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<TITLE>通过键盘移动图像</TITLE>
+	<STYLE type="text/css">
+		
+		body {
+			background-image: url(images/game.jpg);
+			background-repeat: repeat-y;
+		}
+		
+	</STYLE>
+	<!-- 2024022028曾钢 -->
+<script>
+	document.addEventListener('DOMContentLoaded', function() { // 确保DOM完全加载后执行
+		function move(event) {
+			var man = document.getElementById('man');
+			switch (event.keyCode) { 
+				case 37: // 左箭头
+					if(parseInt(man.style.left.replace('px', '')) > 0){
+						man.style.left = parseInt(man.style.left) - 10 + 'px'; // 向左移动10像素
+					}
+					break;
+				case 38: // 上箭头
+					if(parseInt(man.style.top.replace('px', '')) > 0){
+						man.style.top = parseInt(man.style.top) - 10 + 'px'; // 向上移动10像素
+					}
+					break;
+				case 39: // 右箭头
+					if(parseInt(man.style.left.replace('px', '')) + 82 <= 800 - 50){ // 考虑到图片实际宽度
+						man.style.left = parseInt(man.style.left) + 10 + 'px'; // 向右移动10像素
+					}
+					break;
+				case 40: // 下箭头
+					if(parseInt(man.style.top.replace('px', '')) + 152 <= 600 - 50){ // 考虑到图片实际高度
+						man.style.top = parseInt(man.style.top) + 10 + 'px'; // 向下移动10像素
+					}
+					break;
+			}
+		}
+	
+		document.addEventListener('keydown', move); // 使用 addEventListener 添加事件监听器
+	});
+	</script>
+</HEAD>
+
+<BODY>
+
+	<DIV id="man" style="position:absolute;left:543px;top:288px;width:89px;height:115px;z-index:1"><IMG
+			src="images/man.gif" width="82" height="152"></DIV>
+</BODY>
+
+
+</HTML>

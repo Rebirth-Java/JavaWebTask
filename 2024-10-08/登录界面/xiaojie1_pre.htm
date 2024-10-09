@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" --><HEAD><TITLE>登录页面</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312"><LINK 
+href="登录页面_files/mainpage.css" type=text/css rel=stylesheet><LINK 
+href="登录页面_files/tabs.css" type=text/css rel=stylesheet><!-- InstanceBeginEditable name="doctitle" --><!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<STYLE type=text/css>.STYLE5 {
+	FONT-SIZE: 36px
+}
+</STYLE>
+
+<!-- InstanceParam name="FootOptionalRegion1" type="boolean" value="true" -->
+<META content="MSHTML 6.00.3790.4026" name=GENERATOR></HEAD>
+<BODY>
+<DIV id=head><!--首页的头部-->
+<TABLE width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="55%" rowspan=2>
+      <DIV align=left><IMG height=31 src="登录页面_files/logo.gif" 
+    width=240></DIV></TD>
+    <TD width="12%">
+      <DIV align=right><IMG height=24 src="登录页面_files/banner_1.gif" 
+      width=51></DIV></TD>
+    <TD width="6%">
+      <DIV align=right><IMG height=24 src="登录页面_files/banner_2.gif" 
+      width=51></DIV></TD>
+    <TD width="8%">
+      <DIV align=right><IMG height=24 src="登录页面_files/banner_3.gif" 
+      width=73></DIV></TD>
+    <TD width="5%">
+      <DIV align=right><IMG height=24 src="登录页面_files/banner_4.gif" 
+      width=39></DIV></TD>
+    <TD width="7%">
+      <DIV align=right><IMG height=24 src="登录页面_files/banner_5.gif" 
+      width=62></DIV></TD>
+    <TD width="7%">
+      <DIV align=right><A 
+      href="../../贯穿案例/client_center/FrameSet.html" 
+      target=_blank><IMG height=24 src="登录页面_files/banner_6.gif" width=61 
+      border=0></A></DIV></TD></TR>
+  <TR>
+    <TD colspan=6>
+      <DIV align=right>您好，欢迎来淘宝！[<A 
+      href="../../贯穿案例/register/register.html" 
+      target=_self>免费注册</A>][<A href="../../贯穿案例/login/login.htm" 
+      target=_self>登录</A>] 阿里旺旺 支付宝 </DIV></TD></TR></TBODY></TABLE>
+<TABLE cellspacing=0 cellpadding=0 width="100%" border=0>
+  <tbody>
+  <TR>
+    <TD><IMG height=35 src="登录页面_files/table_1.gif" width=950></TD></TR>
+  <TR align=left>
+    <TD>
+      <TABLE style="VERTICAL-ALIGN: top" height=55 cellspacing=0 cellpadding=0 
+      width=950 background=登录页面_files/slice_1.gif border=0>
+        <FORM id=search_form action="" method=post>
+        <TBODY>
+        <TR>
+          <TD align=right width="11%"><SELECT name=search_type> <OPTION 
+              value=auction selected>搜索宝贝</OPTION> <OPTION 
+              value=shop>搜索店铺</OPTION> <OPTION value=nick>搜索掌柜</OPTION> <OPTION 
+              value=info>搜索资讯</OPTION> <OPTION value=web>搜索网页</OPTION></SELECT> 
+</TD>
+          <TD width="89%"><LABEL><INPUT name=textfield> <SELECT id=cat 
+            name=cat> <OPTION value="" selected>所有分类</OPTION> <OPTION 
+              value=25>玩具/动漫/模型/卡通</OPTION> <OPTION 
+              value=50008075>购物优惠券/门票/美容健身卡</OPTION> <OPTION 
+              value=50007216>鲜花速递/蛋糕配送/园艺花艺</OPTION> <OPTION 
+              value=50003754>网店服务/物流/个性/家政/婚庆</OPTION></SELECT> <INPUT type=submit value="  搜 索  " name=Submit> <SPAN 
+            class=fontcolor_white>[ 高级搜索 ] [ 使用帮助 ] </SPAN></LABEL></TD></TR>
+        <TR class=fontcolor_white>
+          <TD align=right>热门搜索：</TD>
+          <TD align=left>&nbsp;T恤 女鞋 手机 比基尼 魔兽世界 减肥 七分裤 娃娃衫 特价机票 连衣裙 Q币 美白防晒 
+            热销品 二手房 </TD></TR></FORM></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV><!-- InstanceBeginEditable name="ContentEditRegion3" -->
+<SCRIPT language="javascript"  >
+
+function checkForm( )
+	{	
+	
+	
+    var txtName = document.forms["userfrm"]["txtName"].value;
+    var txtPass = document.forms["userfrm"]["txtPass"].value;
+
+    // 验证会员名是否为空，并且只包含 a-z、0-9 和下划线
+   
+      if (txtName == ""&&txtPass =="") {
+        alert("会员名不能为空！密码不能为空!");
+        return false;
+      }
+     else if (txtName == "") {
+      alert("会员名不能为空！")
+      return false;
+        //利用正则表达式来验证
+    } else if (!/^[a-z0-9_]+$/.test(txtName)) {
+        alert("会员名只能包含 a-z、0-9 和下划线！");
+        return false;
+    }
+
+    // 验证密码长度不少于 6 位
+    if (txtPass == "") {
+        alert("密码不能为空！");
+        return false;
+    } else if (txtPass.length < 6) {
+        alert("密码至少需要 6 个字符！");
+        return false;
+    }
+}
+	
+</SCRIPT>
+
+<DIV id=content><!--首页的中间部分-->
+<DIV id=middle><!--防止topbar_style1_bk.gif和logo.gif在firefox浏览器里显示时处在同一行-->
+<TABLE cellpadding=0 width=760 border=0>
+  <TBODY>
+  <TR>
+    <TD align=left width=378 height=460>
+      <TABLE height=458 width=378 border=0>
+        <TBODY>
+        <TR height="20%">
+          <TD><IMG height=57 src="登录页面_files/title_login_2.gif" width=150></TD><!--高度占表格高度的五分之一--></TR>
+        <FORM name="userfrm" onSubmit=" return checkForm( )"    action="login_success.htm" method="post">
+        <TR valign=top height="43%">
+          <TD align=right>
+            <TABLE width=350 border=0>
+              <TBODY>
+              <TR align=left height="25%">
+                <TD>会员名:</TD>
+                <TD><INPUT class=register_textBroader id=txtName size=15 
+                  name=txtName> 
+                (可包含a-z、0-9和下划线)</TD></TR>
+              <TR align=left height="25%">
+                <TD>密&nbsp;&nbsp;码:</TD>
+                <TD><INPUT class=register_textBroader id=txtPass type=password 
+                  size=15 name=txtPass>
+                （至少包含 6 个字符）</TD></TR>
+              <TR>
+                <TD align=middle colspan=2 height=65><INPUT type=submit value=" 登   录 " name=Button> <INPUT type=reset value=" 重   填 " name=Reset> 
+            </TD></TR></TBODY></TABLE></TD></TR></FORM>
+        <TR height="37%">
+          <TD><IMG height=168 src="登录页面_files/register_leftfoot.gif" 
+          width=427></TD></TR></TABLE></TD>
+    <TD align=left width=378 height=460><IMG height=399 alt="" 
+      src="登录页面_files/register_right.gif" 
+width=333></TD></TR></TBODY></TABLE></DIV></DIV><!-- InstanceEndEditable --><!-- InstanceBeginEditable name="EditRegion4" -->
+<DIV id=foot><!--首页页脚-->
+<TABLE width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+      <HR width=950>
+    </TD></TR><!--画直线-->
+  <TR>
+    <TD>
+      <DIV class=fontcolor_blue><A 
+      href="../../贯穿案例/login/login.htm#">关于淘宝 广告服务</A> <A 
+      href="../../贯穿案例/login/login.htm#">合作伙伴</A> <A 
+      href="../../贯穿案例/login/login.htm#">客户中心</A> <A 
+      href="../../贯穿案例/login/login.htm#">诚征英才</A> <A 
+      href="../../贯穿案例/login/login.htm#">联系我们</A> <A 
+      href="../../贯穿案例/login/login.htm#">网站地图</A> <A 
+      href="../../贯穿案例/login/login.htm#">热门品牌 版权说明</A> 
+  </DIV></TD></TR>
+  <TR>
+    <TD>
+      <DIV>全球阿里巴巴 ： <A href="../../贯穿案例/login/login.htm#">中国站</A> 
+      <A href="../../贯穿案例/login/login.htm#">国际站 日文站 淘宝站 支付宝 中国雅虎 
+      口碑网 阿里软件 淘宝推广联盟 </A></DIV></TD></TR>
+  <TR>
+    <TD>
+      <DIV>Copyright 2003-2007, 版权所有 TAOBAO.COM</DIV></TD></TR>
+  <TR>
+    <TD>
+      <DIV class=fontcolor_blue>ICP证：浙B2-20050291</DIV></TD></TR>
+  <TR>
+    <TD>
+      <DIV>广告经营许可证号：3301061000468</DIV></TD></TR></TBODY></TABLE></DIV><!-- InstanceEndEditable --><!-- InstanceEnd --></BODY></HTML>

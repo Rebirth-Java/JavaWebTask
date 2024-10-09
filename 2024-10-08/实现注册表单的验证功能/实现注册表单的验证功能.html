@@ -1,0 +1,337 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<link href="../css/mainpage.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../css/tabs.css" />
+	<!-- InstanceBeginEditable name="doctitle" -->
+	<title>注册页面</title>
+	<!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+	<style type="text/css">
+	
+		/* .STYLE5 {
+			font-size: 36px
+		} */
+		
+	</style>
+	<!-- InstanceParam name="FootOptionalRegion1" type="boolean" value="true" -->
+</head>
+
+<body>
+
+	<div id="head"> <!--首页的头部-->
+		<table width="100%" border="0">
+			<tr>
+				<td width="55%" rowspan="2">
+					<div align="left"><img src="images/logo.gif" width="240" height="31" /></div>
+				</td>
+				<td width="12%">
+					<div align="right"><img src="images/banner_1.gif" width="51" height="24" /></div>
+				</td>
+				<td width="6%">
+					<div align="right"><img src="images/banner_2.gif" width="51" height="24" /></div>
+				</td>
+				<td width="8%">
+					<div align="right"><img src="images/banner_3.gif" width="73" height="24" /></div>
+				</td>
+				<td width="5%">
+					<div align="right"><img src="images/banner_4.gif" width="39" height="24" /></div>
+				</td>
+				<td width="7%">
+					<div align="right"><img src=".images/banner_5.gif" width="62" height="24" /></div>
+				</td>
+				<td width="7%">
+					<div align="right"><a href="client_center/FrameSet.html" target="_blank"><img
+								src="images/banner_6.gif" width="61" height="24" border="0" /></a></div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="6">
+					<div align="right">您好，欢迎来淘宝！[<a href="register.html" target="_self">免费注册</a>][<a
+							href="../login/login.htm" target="_self">登录</a>] 阿里旺旺 支付宝 </div>
+				</td>
+			</tr>
+		</table>
+
+		<table width="100%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td><img src="images/table_1.gif" width="950" height="35" /></td>
+			</tr>
+			<tr align="left">
+				<td>
+					<table width="950" height="55" cellpadding="0" cellspacing="0" border="0"
+						background="images/slice_1.gif" style="vertical-align:top">
+						<form id="search_form" method="post" action="">
+							<tr>
+								<td width="11%" align="right">
+									<select name=search_type>
+										<option value=auction selected>搜索宝贝</option>
+										<option value=shop>搜索店铺</option>
+										<option value=nick>搜索掌柜</option>
+										<option value=info>搜索资讯</option>
+										<option value=web>搜索网页</option>
+									</select>
+								</td>
+								<td width="89%">
+									<label>
+										<input type="text" name="textfield" />
+										<select id=cat name=cat>
+											<option value="" selected>所有分类</option>
+											<option value=25>玩具/动漫/模型/卡通</option>
+											<option value=50008075>购物优惠券/门票/美容健身卡</option>
+											<option value=50007216>鲜花速递/蛋糕配送/园艺花艺</option>
+											<option value=50003754>网店服务/物流/个性/家政/婚庆</option>
+										</select>
+										<input type="submit" name="Submit" value="  搜 索  " />
+										<span class="fontcolor_white">[ 高级搜索 ] [ 使用帮助 ] </span>
+									</label>
+								</td>
+							</tr>
+							<tr class="fontcolor_white">
+								<td align="right">热门搜索：</td>
+								<td align="left"> &nbsp;T恤 女鞋 手机 比基尼 魔兽世界 减肥 七分裤 娃娃衫 特价机票 连衣裙 Q币 美白防晒 热销品 二手房 </td>
+							</tr>
+						</form>
+					</table>
+
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- InstanceBeginEditable name="ContentEditRegion3" -->
+	<div id="content">
+		<!--首页的中间部分-->
+		<script language="javascript" type="text/javascript">
+			//sNameCheck() && passCheck() && bdaycheck()
+			function validateform() {
+				if (sNameCheck() && passCheck() && bdaycheck())
+					return true;
+				else
+					return false;
+			}
+
+			// Login Name Validation
+			function sNameCheck() {
+				var strName = document.userfrm.sname.value;
+				//如果登录名为空，就提示请输入登录名
+				if (strName === "") {
+					alert("请输入登录名");
+					document.userfrm.sname.focus();
+					return false;
+				}
+				return true;
+
+
+			}
+
+			//Validate password
+			function passCheck() {
+				var userpass = document.userfrm.pass.value;
+				var ruserpass = document.userfrm.rpass.value;
+
+				if (userpass !== ruserpass) {
+					alert("两次输入的密码不一致！,请重新输入");
+					document.userfrm.rpass.focus();//重新聚焦到输入框
+					return false;
+				}
+				if (userpass.length < 6) {
+					alert("密码至少需要包含六个字符！,请重新输入");
+					document.userfrm.pass.focus();//重新聚焦到输入框
+					return false;
+				}
+				return true;
+
+
+
+			}
+
+			function bdaycheck() {
+				var bmonth = document.userfrm.bmon.value;
+				var bday = document.userfrm.bday.value;
+				var byear = document.userfrm.byear.value;
+				//alert(bmonth + "/" +  bday + "/" + byear);
+				if (bmonth == "" || bday == "" || byear == "" || bday == "dd" || byear == "yyyy") {
+					alert("请输入您的生日");
+					document.userfrm.bmon.focus();
+					return false;
+				}
+
+				for (i = 0; i < bday.length; i++) {
+					var bnum = bday.substring(i, i + 1)
+					if (!(bnum < 9 || bnum > 0)) {
+						alert("日期无效");
+						document.userfrm.bday.focus();
+						return false;
+					}
+				}
+
+
+				//验证年份必须以20打头
+//截取字符串,从第一位开始，截取二位
+				if (byear.substr(0, 2) !== "20") {
+					alert("您输入的出生年份格式错误,请输入以20开头的年份！");
+					document.userfrm.byear.focus();//重新聚焦到输入框上
+					return false;
+				}
+
+
+				//验证出生年月日是否在指定的范围内
+				if (byear < 1900 || byear > 2120) {
+					alert("您输入的出生年份超出范围！\n请重新输入！");
+					document.userfrm.byear.focus();
+					return (false);
+				}
+				else
+					if (bmonth < 0 || bmonth > 12) {
+						alert("您输入的月份超出范围！\n请重新输入！");
+						document.userfrm.bmon.focus();
+						return (false);
+					}
+					else {   //验证填入的日期必须在1－31之间
+
+						if (bday <= 0 || bday > 31) {
+							alert("您输入的日超出范围！请重新输入！");
+							document.userfrm.bday.focus();//重新聚焦到输入框上
+							return false;
+						}
+
+					}
+
+				return true;
+			}
+		</script>
+
+		<table width="950" border="0" align="center">
+			<tr>
+				<td width="250" height="75"><img src="images/logo.gif" width="250" height="40"></td>
+				<td height="75"><img src="images/reg.gif" width="250" height="50"></td>
+				<td width="260" height="75">&nbsp;</td>
+			</tr>
+		</table>
+
+		<table width="950" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#99CCFF">
+			<form name="userfrm" method="post" action="register_success.htm" onsubmit="return validateform( )">
+				<tr class="register_table_line">
+					<td width="160" align="right" bgcolor="#E7FBFF">登录名：</td>
+					<td align="left" bordercolor="#E7E3E7"> <input name="sname" type="text" class="register_textBroader"
+							id="sname" size="24"></td>
+				</tr>
+				<tr class="register_table_line">
+					<td width="160" align="right" bgcolor="#E7FBFF">密码：</td>
+					<td align="left" bordercolor="#E7E3E7"> <input name="pass" type="password"
+							class="register_textBroader" id="pass" size="26">
+						（至少包含 6 个字符） </td>
+				</tr>
+				<tr class="register_table_line">
+					<td width="160" height="0" align="right" bgcolor="#E7FBFF">再次输入密码：</td>
+					<td height="0" align="left" bordercolor="#E7E3E7"><input name="rpass" type="password"
+							class="register_textBroader" id="rpass" size="26"></td>
+				</tr>
+				<tr class="register_table_line">
+					<td width="160" align="right" bgcolor="#E7FBFF">出生日期：</td>
+					<td align="left" bordercolor="#E7E3E7">
+						<input name="byear" class="register_textBroader" id="byear" onfocus="this.value=''" value="yyyy"
+							size=4 maxlength=4>&nbsp;年&nbsp&nbsp
+						<select name="bmon">
+							<option value="" selected>[选择月份]
+							<option value=0>一月
+							<option value=1>二月
+							<option value=2>三月
+							<option value=3>四月
+							<option value=4>五月
+							<option value=5>六月
+							<option value=6>七月
+							<option value=7>八月
+							<option value=8>九月
+							<option value=9>十月
+							<option value=10>十一月
+							<option value=11>十二月
+						</select>&nbsp月&nbsp&nbsp;
+						<input name="bday" class="register_textBroader" id="bday" onfocus="this.value=''" value="dd"
+							size=2 maxlength=2>日
+					</td>
+				</tr>
+				<tr class="register_table_line">
+					<td width="160" height="35" align="right" bgcolor="#E7FBFF">
+						<input type="reset" name="Reset" value=" 重   填 ">
+					</td>
+					<td height="35" align="left" bordercolor="#E7E3E7">
+						<input type="submit" name="Button" value="同意以下服务条款，提交注册信息">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<table width="760" border="0">
+							<tr>
+								<td height="36">
+									<h4><img src="images/read.gif" width="35" height="26">阅读淘宝网服务协议 </h4>
+								</td>
+							</tr>
+							<tr>
+								<td height="120">
+									<textarea name="textarea" cols="80" rows="6">
+欢迎阅读服务条款协议，本协议阐述之条款和条件适用于您使用Taobao.com网站的各种工具和服务。
+本服务协议双方为淘宝与淘宝网用户，本服务协议具有合同效力。 
+淘宝的权利和义务
+1.淘宝有义务在现有技术上维护整个网上交易平台的正常运行，并努力提升和改进技术，使用户网上交易活动的顺利。 
+2.对用户在注册使用淘宝网上交易平台中所遇到的与交易或注册有关的问题及反映的情况，淘宝应及时作出回复。 
+3.对于在淘宝网网上交易平台上的不当行为或其它任何淘宝认为应当终止服务的情况，淘宝有权随时作出删除相关信息、终止服务提
+
+供等处理，而无须征得用户的同意。 
+4.因网上交易平台的特殊性，淘宝没有义务对所有用户的注册资料、所有的交易行为以及与交易有关的其他事项进行事先审查。 	
+		  </textarea>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</form>
+		</table>
+	</div>
+	<!-- InstanceEndEditable --><!-- InstanceBeginEditable name="EditRegion4" -->
+	<div id="foot">
+		<!--首页页脚-->
+		<table width="100%">
+			<tr>
+				<td>
+					<hr width="950" />
+				</td>
+			</tr>
+			<!--画直线-->
+			<tr>
+				<td>
+					<div class="fontcolor_blue"> <a href="#">关于淘宝 广告服务</a> <a href="#">合作伙伴</a> <a href="#">客户中心</a> <a
+							href="#">诚征英才</a> <a href="#">联系我们</a> <a href="#">网站地图</a> <a href="#">热门品牌 版权说明</a> </div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div> 全球阿里巴巴 ： <a href="#">中国站</a> <a href="#">国际站 日文站 淘宝站 支付宝 中国雅虎 口碑网 阿里软件 淘宝推广联盟 </a> </div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div>Copyright 2003-2007, 版权所有 TAOBAO.COM</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="fontcolor_blue">ICP证：浙B2-20050291</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div>广告经营许可证号：3301061000468</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd -->
+
+</html>

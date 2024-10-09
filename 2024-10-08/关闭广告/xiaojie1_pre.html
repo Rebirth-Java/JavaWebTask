@@ -1,0 +1,62 @@
+
+  <HTML>
+  <HEAD>
+  <META http-equiv="Content-Type" content="text/html; charset=gb2312">
+  <TITLE>小结1浮动广告窗口 </TITLE>
+  <script language="javascript">
+    let lastScrollTop = 0; // 记录上一次滚动的位置
+    
+    function inix() {
+        window.addEventListener('scroll', move);
+    }
+    
+    function move() {
+        var advLayer = document.getElementById("advLayer");
+        var closeLayer = document.getElementById("closeLayer");
+    
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+        // 判断滚动的方向
+        if (scrollTop > lastScrollTop) { // 向下滚动
+            if (scrollTop > 500) { // 如果向下滚动且超过阈值，则隐藏广告
+                advLayer.style.display = "none";
+            } else {
+                // 否则仅更新广告位置但不隐藏
+                advLayer.style.top = (100 + scrollTop +lastScrollTop) + 'px';
+            }
+        } else { // 向上滚动
+            advLayer.style.top = '100px'; // 回到初始位置
+            advLayer.style.display = ""; // 显示广告
+        }
+    
+        // 更新上次滚动的位置
+        lastScrollTop = scrollTop;
+    
+        // 同步更新关闭按钮的位置（如果需要）
+        closeLayer.style.top = (80 + scrollTop) + 'px';
+    
+        function closeMe() {
+            advLayer.style.display = "none";
+        }
+    }
+    </script>
+
+   
+  
+   
+  <STYLE type="text/css">
+
+body {
+	margin-top: 0px;
+}
+
+</STYLE></HEAD>
+    
+  <BODY  onLoad="inix( )" >
+   <DIV id="closeLayer"  onClick="closeMe( )" style="position:absolute;	right:40px;	top:80px;	width:54px;	height:19px;z-index:2;"><FONT color="#0000FF" face="黑体">关闭</FONT></DIV>
+  <P align="center"><IMG src="images/xiaojie1.jpg" width="768" height="1113"></P>
+  <DIV id="advLayer"  style="position:absolute; right:30px; top:100px; width:86px; height:81px; z-index:1"><A href="http://www.taobao.com"><IMG src="images/float_advclose1.gif" width="85" height="80" border="0"></A></DIV>
+   
+  </BODY>
+  </HTML>
+</div>
